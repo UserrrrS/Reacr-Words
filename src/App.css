@@ -1,0 +1,119 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    height: 100dvh;
+    padding: 20px 10%;
+}
+
+.bord {
+    text-align: center;
+    width: 100%;
+    font-size: 25px;
+    padding: 5px 0;
+    margin: 10px 0;
+    border: 1px solid white;
+    color: white;
+}
+
+.page-center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-center p {
+    font-size: 100px;
+    color: white;
+}
+
+.title {
+    font-size: 40px;
+    height: max-content;
+    color: white;
+}
+
+.title-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.title-wrapper.title-wrapper_alphabet {
+    flex-flow: row wrap;
+    height: max-content;
+    gap: 10px;
+    overflow: visible;
+}
+
+.title-wrapper li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: max-content;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-bottom: 10px;
+}
+
+.title-wrapper li:hover {
+    transform: scale(120%);
+}
+
+.title-wrapper.title-wrapper_alphabet li {
+    border: 1px solid white;
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+.title-wrapper li a:hover {
+    color: lightblue;
+}
+
+.title-wrapper li a {
+    color: #fefefe;
+    font-size: 15px;
+    transition: .2s;
+}
+
+
+.title-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    margin-right: 5px;
+    border: 1px solid white;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.title-btn img {
+    width: 55%;
+    transition: .2s;
+}
+
+.title-btn:last-of-type {
+    margin-right: 10px;
+}
+
+.title-btn img:hover {
+    transform: scale(120%);
+}
+
+.title-btn.title-btn_add {
+    padding: 4px;
+}
+
+.title-btn.title-btn_add img {
+    width: 100%;
+}

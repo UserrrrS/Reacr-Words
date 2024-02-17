@@ -1,0 +1,20 @@
+.main-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+input {
+    box-shadow: 2px 2px 3px black;
+    background-color: #444;
+    font-size: 15px;
+    width: 30%;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.main-wrapper .list-btn {
+    margin: 0;
+}
