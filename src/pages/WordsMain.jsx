@@ -11,24 +11,8 @@ import check from "../assets/images/check.svg";
 import cancel from "../assets/images/cross.svg";
 
 export default function Page() {
-    const [dynamicLine, setDynamicLine] = useState(false);
-    const [earlierWord, setEarlierWord] = useState("");
-    const [newWord, setNewWord] = useState("");
-    const words = useSelector(state => state.words);
-    const send = useDispatch();
 
-    const addWords = () => {
-        const concl = words.data.filter(el => el.toLowerCase() === newWord.toLowerCase())
-        if (earlierWord.length > 0) {
-            if (earlierWord !== newWord && !concl.length) {
-                send(AddSome([earlierWord, newWord[0].toUpperCase() + newWord.slice(1).toLowerCase()]));
-                Close();
-            }
-        } else if (/^[A-Za-z]/g.test(newWord) && !concl.length) {
-            send(AddSome(newWord[0].toUpperCase() + newWord.slice(1).toLowerCase()));
-            Close();
-        }
-    }
+    
     const Close = () => {
         setDynamicLine(false);
         setEarlierWord("");
@@ -44,6 +28,27 @@ export default function Page() {
         setNewWord(el);
         setDynamicLine(true);
     }
+
+    const [dynamicLine, setDynamicLine] = useState(false);
+    const [earlierWord, setEarlierWord] = useState("");
+    const [newWord, setNewWord] = useState("");
+    const words = useSelector(state => state.words);
+    const send = useDispatch();
+
+
+    const addWords = () => {
+        const concl = words.data.filter(el => el.toLowerCase() === newWord.toLowerCase())
+        if (earlierWord.length > 0) {
+            if (earlierWord !== newWord && !concl.length) {
+                send(AddSome([earlierWord, newWord[0].toUpperCase() + newWord.slice(1).toLowerCase()]));
+                Close();
+            }
+        } else if (/^[a-zA-Z0-9]/g.test(newWord) || /^[А-Яа-яЁё]/g.test(newWord)  && !concl.length) {
+            send(AddSome(newWord[0].toUpperCase() + newWord.slice(1).toLowerCase()));
+            Close();
+        }
+    }
+ 
 
 
     return (

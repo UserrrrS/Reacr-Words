@@ -1,15 +1,15 @@
 import "./style.css";
 
-export default function Input({ unit, newList, setListWord }) {
+export default function entry({ children, newword, setNewWord}) {
     return (
         <div className="main-wrapper">
             <input
                 type="text"
-                placeholder="Напишите слово (Английский алфавит)"
-                value={newList}
-                onChange={(e) => setListWord(e.target.value)}
+                placeholder="напишите слово (английский алфавит)"
+                value={newword}
+                onChange={(e) => setNewWord(e.target.value)}
             />
-            {unit}
+            {children}
         </div>
     )
 }
